@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   namespace :v1 do
     resources :items
+    resources :favorites
   end
   get '/member-data', to: 'members#show'
 
