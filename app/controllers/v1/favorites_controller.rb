@@ -12,15 +12,16 @@ class V1::FavoritesController < ApplicationController
 
   def delete
     @favorite = Favorite.where(user_params)
-    if @favorite.delete
-      @message = 'Favoriate was deleted successfully.'
-      render json: @message
-    else
-      @message = 'Something went wrong! please try again later'
-      render json: @message
+    @message = if @favorite.delete
+                 'Favoriate was deleted successfully.'
+               else
+                 'Something went wrong! please try again later'
+               end
+    render json: @message
   end
 
   private
+
   def user_params
     params.require(:favorite).permit(:user_id, :item_id)
   end
