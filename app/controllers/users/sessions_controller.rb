@@ -8,6 +8,7 @@ class Users::SessionsController < Devise::SessionsController
       user: current_user
     }, status: :ok
   end
+  
   def respond_to_on_destroy
     log_out_success && return if current_user
 
