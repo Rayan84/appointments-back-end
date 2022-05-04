@@ -1,4 +1,6 @@
 class V1::ItemsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+
   def index
     @items = Item.all
     render json: @items

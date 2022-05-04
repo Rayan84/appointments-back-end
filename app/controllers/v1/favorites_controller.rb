@@ -17,7 +17,7 @@ class V1::FavoritesController < ApplicationController
   end
 
   def delete
-    @favorite = Favorite.where(user_id: current_user, item_id: user_params[:item_id])
+    @favorite = Favorite.where(user_params[:item_id])
     @message = if @favorite.delete
                  'Favoriate was deleted successfully.'
                else
@@ -29,6 +29,6 @@ class V1::FavoritesController < ApplicationController
   private
 
   def user_params
-    params.require(:favorite).permit(:item_id)
+    params.require(:favorite).permit(:user_id, :item_id)
   end
 end
