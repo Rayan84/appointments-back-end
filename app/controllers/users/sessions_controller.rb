@@ -6,8 +6,9 @@ class Users::SessionsController < Devise::SessionsController
   def respond_with
     render json: {
       message: 'You are logged in.',
-      user: current_user
-    }, status: :ok
+      user: current_user,
+      status: 200
+    }
   end
 
   def respond_to_on_destroy
@@ -17,7 +18,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def log_out_success
-    render json: { message: 'You are logged out.' }, status: :ok
+    render json: { message: 'You are logged out.', status: 200 }
   end
 
   def log_out_failure
