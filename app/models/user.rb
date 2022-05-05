@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :favorites
 
   validates :email, presences: true, uniqueness: true
-  
 end
