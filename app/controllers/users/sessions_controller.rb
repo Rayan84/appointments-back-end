@@ -22,6 +22,7 @@ class Users::SessionsController < Devise::SessionsController
       message: 'You are logged out.',
       status: 200
     }
+
   end
 
   def log_out_failure
