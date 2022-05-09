@@ -6,5 +6,5 @@ class User < ApplicationRecord
          jwt_revocation_strategy: JwtDenylist
   has_many :favorites
 
-  validates :email, presences: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
 end
