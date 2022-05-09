@@ -3,7 +3,7 @@ class Users::SessionsController < Devise::SessionsController
 
   private
 
-  def respond_with
+  def respond_with(_resource, _opts = {})
     render json: {
       message: 'You are logged in.',
       user: current_user
