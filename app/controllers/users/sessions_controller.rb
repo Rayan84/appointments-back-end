@@ -7,7 +7,6 @@ class Users::SessionsController < Devise::SessionsController
     render json: {
       message: 'You are logged in.',
       user: current_user,
-      token: current_token,
       status: 200
     }
   end
