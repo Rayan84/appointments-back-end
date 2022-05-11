@@ -15,7 +15,7 @@ Backend application for user accounts creation and authentication, add and remov
 ## Getting Started
 
 The back-end application will receive POST requests to create user accounts, and reservations and GET requests to view scooters and reservations.
-The base URL is: http://localhost:3000/
+The base URL is: https://cryptic-anchorage-52984.herokuapp.com
 
 If you want to view scooters you can call this endpoint:
 
@@ -23,7 +23,7 @@ If you want to view scooters you can call this endpoint:
 
 To do the same but with reservations call this endpoint:
 
-/api/v1/favorites
+/api/v1/reserveds
 
 APIs endpoints will return content in JSON form with the following format:
 
