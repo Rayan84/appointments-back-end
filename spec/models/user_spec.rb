@@ -4,11 +4,6 @@ RSpec.describe User, type: :model do
   user = User.new(email: 'abc@email.com', password: 'password')
   before { user.save }
 
-  # it 'should have many items' do
-  #   item = User.reflect_on_association(:items)
-  #   expect(item.macro).to eq(:has_many)
-  # end
-
   it 'should have many reservation' do
     reservation = User.reflect_on_association(:reserveds)
     expect(reservation.macro).to eq(:has_many)
