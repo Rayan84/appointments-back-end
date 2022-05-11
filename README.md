@@ -110,7 +110,7 @@ Our team is composed of:
 
 👤 **Munsa Mibenge**
 - GitHub: [@Munsa1](https://github.com/Munsa1)
-- LinkedIn: [@Munsa1](https://www.linkedin.com/in//)
+- LinkedIn: [@Munsa1](https://www.linkedin.com/in/munsa-mibenge/)
 
 👤 **Rayan Rassam**
 - GitHub: [@Rayan84](https://github.com/Rayan84)
