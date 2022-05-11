@@ -18,19 +18,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_08_060235) do
     t.string "name"
     t.string "photo"
     t.text "description"
-    t.string "specs"
     t.integer "price"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "reserveds", force: :cascade do |t|
-    t.string "name"
-    t.string "city"
-    t.date "started_at"
-    t.date "ended_at"
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.datetime "created_at", null: false
@@ -54,7 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_08_060235) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "items", "users"
   add_foreign_key "reserveds", "items"
   add_foreign_key "reserveds", "users"
 end

@@ -4,10 +4,8 @@ class CreateItems < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :photo
       t.text :description
-      t.string :specs
       t.integer :price
-      t.references :user, null: false, foreign_key: true
-
+      
       t.timestamps
     end
   end

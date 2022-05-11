@@ -50,6 +50,6 @@ class Api::V1::ReservedsController < ApplicationController
   private
 
   def reserved_params
-    params.require(:reserved).permit(:name, :city, :started_at, :ended_at, :user_id, :item_id)
+    params.require(:reserved).permit(:user_id, :item_id)
   end
 end
