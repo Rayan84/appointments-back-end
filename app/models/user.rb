@@ -5,5 +5,4 @@ class User < ApplicationRecord
          :jwt_authenticatable, jwt_revocation_strategy: self
 
   has_many :reserveds, foreign_key: 'user_id', dependent: :destroy
-
 end
