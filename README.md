@@ -4,7 +4,7 @@ Backend application for user accounts creation and authentication, add and remov
 
 # Live link for API
 
- [Click Me!](https:)
+ [Click Me!](https://cryptic-anchorage-52984.herokuapp.com)
 ## Built With
 
 - Ruby version 3.0.1
@@ -51,7 +51,7 @@ For reservations:
 
 You can view the details for a specific scooter by calling this endpoint:
 
-/api/v1/scooter/:id
+/api/v1/items/:id
 
 Same for reservations:
 
