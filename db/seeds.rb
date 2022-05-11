@@ -26,4 +26,4 @@ Item.create(name:"IVA E-GO S2 ", price: 1349, photo: "https://www.voordeelscoote
 user1 = User.create(email: "myemail@email.com", password: "password")
 
 
-reserved = Reserved.create(user: user1, item: item1)
+reserved = Reserved.create(user_id: user1.id, item_id: item1.id)
