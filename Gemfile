@@ -9,11 +9,12 @@ gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
-# Rubocop gem
-gem 'rubocop', '>= 1.0', '< 2.0'
-
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
+
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'rack-cors'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
@@ -41,7 +42,14 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
+  gem 'ffi', '~> 1.15', '>= 1.15.5'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -49,7 +57,6 @@ group :development do
   # gem "spring"
 end
 
-gem 'devise', '~> 4.8'
-gem 'devise-jwt', '~> 0.9.0'
-
-gem 'rack-cors', '~> 1.1'
+gem 'devise'
+gem 'devise-jwt'
+gem 'fast_jsonapi'
