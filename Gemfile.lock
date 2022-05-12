@@ -299,6 +299,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.2, >= 7.0.2.4)
   rails-controller-testing
+  rexml
   rspec-rails
   rswag
   rubocop (>= 1.0, < 2.0)
