@@ -14,17 +14,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a47609e133604cc9e845abda7602d0c42e803b08cd1b97213d0a3ec71591cc3cb9590d49674a1e68c00f35f30e25727be07a31082939d955c5696559c8a67a5f'
-  config.jwt do |jwt|
-    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
-    jwt.dispatch_requests = [
-      ['POST', %r{^/sign_in$}]
-    ]
-    jwt.revocation_requests = [
-      ['DELETE', %r{^/sign_out$}]
-    ]
-    jwt.expiration_time = 15.day.to_i
-  end
+  # config.secret_key = '0b898b6e724c1034c61abcf74ea726b988396f69a18d06743c6023e2ca16aeb34495db74d0955cfeae88976ec4068f379e391320294413a54eb1fcaddaaf78dc'
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -33,8 +24,20 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  config.jwt do |jwt|
+    jwt.secret = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 30.minutes.to_i
+end
+
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.navigational_formats = []
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -135,7 +138,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '1c4c90bd2a67fddda53d874a99246d4a5007bd44d5fa115f39404f63661370bb3e17650971433ec7cc76df914f6c49dfdf9dbf8163f02fe0a4e6d4c77dfdbd02'
+  # config.pepper = '635011b9e409d3721de9d2c8a445573191edf6bacdb326cb1b6d2288ff15bd404803a4aef3aedc58f466966c90e83dc8d9edc4f18f6f9ab645613b123f617026'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false

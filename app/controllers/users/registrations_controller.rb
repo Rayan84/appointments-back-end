@@ -4,20 +4,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def respond_with(resource, _opts = {})
-    register_success && return if resource.persisted?
-
-    register_failed
-  end
-
-  def register_success
-    render json: {
-      message: 'Signed up successfully',
-      user: current_user,
-      status: 200
-    }
-  end
-
-  def register_failed
-    render json: { message: 'Something went wrong.' }, status: :unprocessable_entity
+    if resource.persisted?
+      render json: {
+        status: { code: 200, message: 'Signed up sucessfully.' },
+        data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
+      }
+    else
+      render json: {
+        status: { message: "Registration failed. #{resource.errors.full_messages.to_sentence}" }
+      }, status: :unprocessable_entity
+    end
   end
 end
