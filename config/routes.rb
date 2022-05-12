@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   get '/current_user', to: 'current_user#index'
 
   
@@ -14,9 +16,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :items ,only: [:index,:show,:edit,:create,:update,:destroy] do
-        resources :reserveds, only: [:index,:show,:edit,:create,:update,:destroy]
-      end
+      resources :items ,only: [:index,:show,:edit,:create,:update,:destroy]
+      resources :reserveds, only: [:index,:show,:edit,:create,:update,:destroy]
     end
   end
   # Defines the root path route ("/")

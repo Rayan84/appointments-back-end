@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'CurrentUsers', type: :request do
+RSpec.describe 'Unauthorized status', type: :request do
   describe 'GET /index' do
-    it 'returns http success' do
-      get '/current_user/index'
-      expect(response).to have_http_status(:success)
+    it 'returns http unauthorized' do
+      get '/current_user/'
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 end

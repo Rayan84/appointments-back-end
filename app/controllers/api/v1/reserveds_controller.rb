@@ -5,7 +5,7 @@ class Api::V1::ReservedsController < ApplicationController
   end
 
   def show
-    @reserved = Reserved.find(params[:id])
+    @reserved = Reserved.where(user_id: params[:id])
     render json: @reserved
   end
 

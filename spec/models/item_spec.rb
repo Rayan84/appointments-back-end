@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  my_user = User.new(name: 'Ahmed')
-  item = Item.new(name: 'new_car', photo: 'my_photo', description: 'bla bla bla bla bla bla',
-                  specs: 'bla bla bla bla bla bla', price: 7000, user: my_user)
+  item = Item.new(name: 'scooter', photo: 'my_photo', description: 'Electric scooter', price: 7000)
   before { item.save }
 
   it 'should be valid' do
@@ -13,11 +11,6 @@ RSpec.describe Item, type: :model do
   it 'should have many reservation' do
     reserveds = Item.reflect_on_association(:reserveds)
     expect(reserveds.macro).to eq(:has_many)
-  end
-
-  it 'should belongs to user' do
-    user = Item.reflect_on_association(:user)
-    expect(user.macro).to eq(:belongs_to)
   end
 
   it 'isn\'t valid without name' do
