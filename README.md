@@ -39,7 +39,7 @@ For items:
   "description": "This is an electric scooter, ...etc "
 }
 
-For reservations:
+For reserveds:
 {
   "id": 1,
   "user_id": 1,
@@ -55,7 +55,7 @@ You can view the details for a specific scooter by calling this endpoint:
 
 Same for reservations:
 
-/api/v1/reservations/:id
+/api/v1/reserveds/:id
 
 **If you need further information about the endpoints you can view the documentation navigating to `/api-docs`.
 Or you can just click this [link](https://a-docs)**
