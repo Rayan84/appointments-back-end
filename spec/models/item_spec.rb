@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  my_user = User.new(email: 'abc@email.com', password: 'password')
   item = Item.new(name: 'scooter', photo: 'my_photo', description: 'Electric scooter', price: 7000)
   before { item.save }
 
