@@ -1,8 +1,8 @@
 require 'rails_helper'
-describe 'post a question route', type: :request do
+describe 'post an item route', type: :request do
   before do
-    post '/api/v1/questions',
-         params: { question: 'test_question', answer: 'test_answer', service: 'test_service', number: 2, letter: 'a' }
+    post '/api/v1/items',
+         params: { name: 'XS 214', photo: 'https://www.photos/32423', price: 1224, description: 'Electric scooter' }
   end
   it 'returns the question' do
     expect(JSON.parse(response.body)['question']).to eq('test_question')

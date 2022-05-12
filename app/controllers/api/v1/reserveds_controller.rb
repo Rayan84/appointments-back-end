@@ -1,8 +1,8 @@
 class Api::V1::ReservedsController < ApplicationController
   def index
-    @reserveds = Reserved.where(user_id: reserved_params_index[:user_id])
+    @reserveds = Reserved.where(user_id: params[:user_id])
     render json: {
-      reserveds: @reserveds
+      reserveds: @reserveds,
     }
   end
 
@@ -53,9 +53,5 @@ class Api::V1::ReservedsController < ApplicationController
 
   def reserved_params
     params.require(:reserved).permit(:user_id, :item_id)
-  end
-
-  def reserved_params_index
-    params.require(:reserved_show).permit(:user_id)
   end
 end
