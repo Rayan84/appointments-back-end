@@ -23,7 +23,7 @@ If you want to view scooters you can call this endpoint:
 
 To do the same but with reservations call this endpoint:
 
-/api/v1/reserveds
+/api/v1/reserveds/:user_id
 
 APIs endpoints will return content in JSON form with the following format:
 

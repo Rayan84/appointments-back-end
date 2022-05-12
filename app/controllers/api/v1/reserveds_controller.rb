@@ -1,13 +1,11 @@
 class Api::V1::ReservedsController < ApplicationController
   def index
-    @reserveds = Reserved.where(user_id: params[:user_id])
-    render json: {
-      reserveds: @reserveds,
-    }
+    @reserveds = Reserved.all
+    render json: @reserveds
   end
 
   def show
-    @reserved = Reserved.find(params[:id])
+    @reserved = Reserved.where(user_id: params[:id])
     render json: @reserved
   end
 
