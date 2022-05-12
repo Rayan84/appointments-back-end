@@ -12,4 +12,11 @@ describe 'get  items routes', type: :request do
     get '/api/v1/items'
     expect(response).to have_http_status(:success)
   end
+
+  it 'returns http unauthorized for non-logged in visitor' do
+    get '/current_user/'
+    expect(response).to have_http_status(:unauthorized)
+  end
+
+
 end
