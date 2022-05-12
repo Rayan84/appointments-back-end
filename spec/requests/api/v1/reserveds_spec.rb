@@ -1,5 +1,6 @@
 require 'swagger_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe 'api/v1/reserveds', type: :request do
   path '/api/v1/reserveds' do
     get('list reserveds') do
@@ -114,3 +115,4 @@ RSpec.describe 'api/v1/reserveds', type: :request do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
