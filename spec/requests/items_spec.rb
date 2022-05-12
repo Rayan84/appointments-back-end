@@ -17,6 +17,4 @@ describe 'get  items routes', type: :request do
     get '/current_user/'
     expect(response).to have_http_status(:unauthorized)
   end
-
-
 end

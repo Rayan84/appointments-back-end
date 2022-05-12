@@ -20,5 +20,4 @@ describe 'post an item route', type: :request do
   it 'returns Signed up successfully message' do
     expect(JSON.parse(response.body)['status']['message']).to eq("Signed up sucessfully.")
   end
-
 end
