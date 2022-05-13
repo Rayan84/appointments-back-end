@@ -2,9 +2,6 @@
 
 Backend application for user accounts creation and authentication, add and remove items to user reservations. The application also provides and api for items (scooters) names, prices, photos and descriptions.
 
-# Live link for API
-
- [Click Me!](https://cryptic-anchorage-52984.herokuapp.com)
 ## Built With
 
 - Ruby version 3.0.1
@@ -14,32 +11,100 @@ Backend application for user accounts creation and authentication, add and remov
 - Git and GitHub
 ## Getting Started
 
-The back-end application will receive POST requests to create user accounts, and reservations and GET requests to view scooters and reservations.
+This back-end application will receive POST requests to create user accounts, items and reservations, and GET requests to view scooters and reservations.
+
+There are two ways to use this application, online using the base URL and the endpoints, or clone it to your local machine, below is the explanation for both of the approaches.
+
+
+## Online
 The base URL is: https://cryptic-anchorage-52984.herokuapp.com
 
-If you want to view scooters you can call this endpoint:
+### For items (scooters)
 
-/api/v1/items
+To view all the items:
 
-To do the same but with reservations call this endpoint:
+method: GET
 
-/api/v1/reserveds/:user_id
+endpoint: /api/v1/items
 
-APIs endpoints will return content in JSON form with the following format:
+The API will return a JSON object similar to:
 
 ```
-For items:
-{
-  "id": 1,
-  "name": "XS 420 model",
-  "price": 100,
-  "image": "image_url",
-  "created_at": "2022-01-01T00:00:00.000Z",
-  "updated_at": "2022-01-01T00:00:00.000Z",
-  "description": "This is an electric scooter, ...etc "
-}
+[
+  {
+    "id": 1,
+    "name": "XS 420 model",
+    "price": 1500,
+    "image": "https://www.voordeelscooters.nl/media/catalog/product/cache/cf22dcdb6d2158713bbbed88e2c091bb/s/e/senzo_urban_euro5.png",
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "description": "A modern electric scooter, packed with features ...etc "
+  },
+  {
+    "id": 2,
+    "name": "Z512 420 model",
+    "price": 2200,
+    "image": "https://www.motor.nl/wp-content/uploads/2022/03/2022-Yamaha-E01-00.jpg",
+    "created_at": "2022-01-01T00:00:00.000Z",
+    "updated_at": "2022-01-01T00:00:00.000Z",
+    "description": "This is an electric scooter, ...etc " 
+  }
+]
+```
 
-For reserveds:
+To view details of a particular item:
+
+method: GET
+
+endpoint: /api/v1/items/:id
+### For user account sign up
+
+method: POST
+
+endpoint: /signup 
+
+The API expects to receive a JSON content similar to:
+
+```
+  {
+    "user":
+      {
+        "email": "example@domain.com",
+        "password": "password"
+      }
+  }
+
+```
+
+### For user log in
+
+method: GET
+
+endpoint: /login
+
+The API expects to receive a JSON content similar to:
+
+```
+  {
+    "user":
+      {
+        "email": "example@domain.com",
+        "password": "password"
+      }
+  }
+
+```
+
+### For reservations
+To view reservations:
+
+method: GET
+
+endpoint: /api/v1/reserveds/:user_id
+
+The API will return content in JSON form with the following format:
+
+```
 {
   "id": 1,
   "user_id": 1,
@@ -47,24 +112,12 @@ For reserveds:
   "created_at": "2022-01-01T00:00:00.000Z",
   "updated_at": "2022-01-01T00:00:00.000Z",
 }
+
 ```
 
-You can view the details for a specific scooter by calling this endpoint:
+## Local Machine
 
-/api/v1/items/:id
-
-Same for reservations:
-
-/api/v1/reserveds/:id
-
-**If you need further information about the endpoints you can view the documentation navigating to `/api-docs`.
-Or you can just click this [link](https://a-docs)**
-
-If you prefer to clone the project locally, you can also get to the docs by navigating to http://`domain`:`port`/api-docs. Where `domain` is the domain of your server and `port` is the port of your server.
-For example, if your server is running on port 3000, you can navigate to http://localhost:3000/api-docs.
-There you will see a list of all endpoints and their descriptions.
-
-**The project comes shipped with linters config for ruby, so ensure you have Rubocop installed in your local environment**
+- **The project comes shipped with linters config for ruby, so ensure you have Rubocop installed in your local environment**
 
 - **Ensure you have postgresql, nodejs, ruby and rails set up on your machine**
 
@@ -74,30 +127,17 @@ There you will see a list of all endpoints and their descriptions.
 - **$ to test or consume the api you can git clone this react app [front-end](https://github.com/phelian23/rent-item-frontend.git) and set up locally**
 
 - **$ run `bundle install` to couple all dependacies in gem files**
-
-- **$ run `npm install` to couple all dependacies in package.json files**
-
+- **$ run `rails db:create db:migrate db:seed`**
 - **$ run `rails s` to start rails server**
-
-- **$ browse `http://<domain>:<port>/api-docs` to view swagger api documentations and test end points**
-## Database creation
-
-Run rails db:create db:migrate db:seed
-
-Seeding adds 9 scooters, one user and one reservation.
-
 
 ## Kanban Board
 
 Here you will see some images of our Kanban boards at the beggining of the project.
 
-Back-end kanban:
-[Kanban board image](./readme-images/165843179-9ce03afc-e18c-438b-a3c8-1d66e84a383f.jpg)
+Initial Kanban Board:
+![Initial-Kanaban](./readme-images/initial-kanaban.png)
 
-Front-end kanban:
-[Front end kanban image](./readme-images/.png)
-
-And this is the current link to the kanban board:
+Final Kanaban Board
 [Kanban Board Link](https://github.com/Rayan84/rent-a-scooter-back-end/projects/1)
 
 ## Authors

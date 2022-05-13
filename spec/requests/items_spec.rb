@@ -20,12 +20,12 @@ describe 'get  items routes', type: :request do
 
   it 'posts an item successfully' do
     post '/api/v1/items', params: {
-      "item":
+      item:
       {
-          "name": "XS 435",
-          "photo": "https://www.photos.com/rwer.jpg",
-          "price": "2999",
-          "description": "Electric scooter"
+        name: 'XS 435',
+        photo: 'https://www.photos.com/rwer.jpg',
+        price: '2999',
+        description: 'Electric scooter'
       }
     }
     expect(response).to have_http_status(:success)

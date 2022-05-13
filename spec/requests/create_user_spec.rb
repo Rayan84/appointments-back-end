@@ -1,8 +1,7 @@
 require 'rails_helper'
 describe 'post an item route', type: :request do
- 
   before(:each) do
-    post '/signup', params: { user: { email: "user_six@email.com", password: "password" } }
+    post '/signup', params: { user: { email: 'user_six@email.com', password: 'password' } }
   end
 
   it 'returns success' do
@@ -18,6 +17,6 @@ describe 'post an item route', type: :request do
     expect(JSON.parse(response.body)['data']['id']).to be_an(Numeric)
   end
   it 'returns Signed up successfully message' do
-    expect(JSON.parse(response.body)['status']['message']).to eq("Signed up sucessfully.")
+    expect(JSON.parse(response.body)['status']['message']).to eq('Signed up sucessfully.')
   end
 end

@@ -1,11 +1,9 @@
 require 'rails_helper'
 describe 'user log in', type: :request do
-
-
   before(:each) do
-    User.create(email: "user_seven@email.com", password: "password")
+    User.create(email: 'user_seven@email.com', password: 'password')
 
-    post '/login', params: { user: { email: "user_seven@email.com", password: "password" } }
+    post '/login', params: { user: { email: 'user_seven@email.com', password: 'password' } }
   end
 
   it 'returns success' do
@@ -21,8 +19,6 @@ describe 'user log in', type: :request do
     expect(JSON.parse(response.body)['data']['id']).to be_an(Numeric)
   end
   it 'returns Signed up successfully message' do
-    expect(JSON.parse(response.body)['status']['message']).to eq("Success.")
+    expect(JSON.parse(response.body)['status']['message']).to eq('Success.')
   end
 end
-
-
