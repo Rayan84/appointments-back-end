@@ -12,4 +12,22 @@ describe 'get  items routes', type: :request do
     get '/api/v1/items'
     expect(response).to have_http_status(:success)
   end
+
+  it 'returns http unauthorized for non-logged in visitor' do
+    get '/current_user/'
+    expect(response).to have_http_status(:unauthorized)
+  end
+
+  it 'posts an item successfully' do
+    post '/api/v1/items', params: {
+      item:
+      {
+        name: 'XS 435',
+        photo: 'https://www.photos.com/rwer.jpg',
+        price: '2999',
+        description: 'Electric scooter'
+      }
+    }
+    expect(response).to have_http_status(:success)
+  end
 end
