@@ -115,6 +115,8 @@ The API will return content in JSON form with the following format:
 
 ```
 
+For full API documentation please check [API-Documentation](./swagger/v1/swagger.yaml) 
+
 ## Local Machine
 
 - **The project comes shipped with linters config for ruby, so ensure you have Rubocop installed in your local environment**
