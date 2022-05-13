@@ -115,7 +115,7 @@ The API will return content in JSON form with the following format:
 
 ```
 
-For full API documentation please check [API-Documentation](./swagger/v1/swagger.html) 
+For full API documentation please check [API-Documentation](https://rayan84.github.io/rent-a-scooter-back-end/) 
 
 ## Local Machine
 
