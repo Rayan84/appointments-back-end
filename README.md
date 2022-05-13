@@ -77,7 +77,7 @@ There you will see a list of all endpoints and their descriptions.
 - 
 - **$ run `bundle install` to couple all dependacies in gem files**
 
-- **$ run `npm install` to couple all dependacies in package.json files**
+- **$ run `rails db:create db:migrate db:seed` **
 
 - **$ run `rails s` to start rails server**
 
