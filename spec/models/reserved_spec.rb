@@ -5,10 +5,9 @@ RSpec.describe Reserved, type: :model do
   item = Item.create(name: 'Scooter XS 214', photo: 'my_photo', description: 'Electric scooter', price: 7000)
   reservation = Reserved.create(user_id: user.id, item_id: item.id)
 
-
   it 'should be invalid without proper parametes' do
     reservation_two = Reserved.create(user_id: '')
-    expect(reservation).to be_valid
+    expect(reservation_two).not_to be_valid
   end
   it 'should be valid' do
     expect(reservation).to be_valid
