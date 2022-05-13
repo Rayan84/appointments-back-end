@@ -2,6 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   item = Item.new(name: 'scooter', photo: 'my_photo', description: 'Electric scooter', price: 7000)
+
+  it 'should be invalid without email parameter' do
+    item_two = Item.new(name: 'scooter')
+
+    expect(item_two).not_to be_valid
+  end
+
   before { item.save }
 
   it 'should be valid' do
