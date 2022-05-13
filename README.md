@@ -73,6 +73,8 @@ There you will see a list of all endpoints and their descriptions.
 
 - **$ to test or consume the api you can git clone this react app [front-end](https://github.com/phelian23/rent-item-frontend.git) and set up locally**
 
+- **$ run `cd rent-a-scooter-back-end` to navigate to the project root folder**
+- 
 - **$ run `bundle install` to couple all dependacies in gem files**
 
 - **$ run `npm install` to couple all dependacies in package.json files**
